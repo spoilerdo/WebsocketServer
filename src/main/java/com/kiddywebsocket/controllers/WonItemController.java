@@ -7,13 +7,15 @@ import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 
+import java.util.UUID;
+
 @Controller
 public class WonItemController {
 
     @MessageMapping("/{caseID}/items")
     @SendTo("/topic/{caseID}/items")
     public WonItemMessage newMessage(@DestinationVariable int caseID, Item item) {
-        return new WonItemMessage(caseID, item);
+        return new WonItemMessage(UUID.randomUUID(), caseID, item);
     }
 
 }

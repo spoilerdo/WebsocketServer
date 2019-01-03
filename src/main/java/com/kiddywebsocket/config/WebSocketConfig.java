@@ -14,11 +14,10 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.setApplicationDestinationPrefixes("/app");
         config.enableSimpleBroker("/topic");
-        //com.kiddywebsocket.config.setApplicationDestinationPrefixes("/app"); //TODO : KIJKEN OF DEZE NODIG IS
     }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/").setAllowedOrigins("*").withSockJS();
+        registry.addEndpoint("/websocket").setAllowedOrigins("*").withSockJS();
     }
 }
