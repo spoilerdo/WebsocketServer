@@ -4,16 +4,16 @@ import java.util.UUID;
 
 public class SoldOfferMessage {
     private UUID msgID;
-    private int offerId;
+    private int accountId;
     private Offer offer;
 
     public SoldOfferMessage(){
 
     }
 
-    public SoldOfferMessage(UUID msgID, int offerId, Offer offer) {
+    public SoldOfferMessage(UUID msgID, int accountId, Offer offer) {
         this.msgID = msgID;
-        this.offerId = offerId;
+        this.accountId = accountId;
         this.offer = offer;
     }
 
@@ -25,7 +25,7 @@ public class SoldOfferMessage {
         return offer;
     }
 
-    public int getOfferId() {
-        return offerId;
+    public int getAccountId() {
+        return accountId;
     }
 }

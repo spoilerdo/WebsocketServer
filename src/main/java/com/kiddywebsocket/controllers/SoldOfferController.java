@@ -12,9 +12,9 @@ import java.util.UUID;
 @Controller
 public class SoldOfferController {
 
-    @MessageMapping("/{offerId}/offers")
-    @SendTo("/topic/{offerId}/offers")
-    public SoldOfferMessage newMessage(@DestinationVariable int offerId, Offer offer){
-        return new SoldOfferMessage(UUID.randomUUID(), offerId, offer);
+    @MessageMapping("/{accountId}/offers")
+    @SendTo("/topic/{accountId}/offers")
+    public SoldOfferMessage newMessage(@DestinationVariable int accountId, Offer offer){
+        return new SoldOfferMessage(UUID.randomUUID(), accountId, offer);
     }
 }
